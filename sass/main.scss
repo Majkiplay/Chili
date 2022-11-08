@@ -1,0 +1,364 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62, 5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    background-color: #ffffff;
+}
+
+.wrapper {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+
+i {
+    padding: 0.3em;
+}
+
+// NAVIGATION
+.nav {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2;
+    box-shadow: 1px 11px 20px -10px rgba(49, 49, 49, 1);
+    z-index: 3;
+
+    &__logo {
+        font-size: 1.5rem;
+        padding: 0.9rem;
+        color: #f2f2f2;
+        background-color: #406417;
+        box-shadow: 1px 11px 20px -10px rgba(49, 49, 49, 1);
+    }
+
+    &__items-desktop {
+        display: none;
+    }
+
+    &__burger {
+        display: flex;
+        justify-content: end;
+        width: 100vw;
+        height: 3rem;
+        background-color: #f2f2f2;
+
+        &-icon {
+            padding: 0.7rem;
+            font-size: 1.5rem;
+            color: #406417;
+            cursor: pointer;
+            transition: color 0.3s;
+
+            &:hover {
+                color: #a8180d;
+            }
+        }
+    }
+
+    &__items-mobile {
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 50px 0 100px 50px;
+        top: 0;
+        height: 90vh;
+        width: 90%;
+        background-color: rgb(63, 62, 62);
+        transform: translateX(150%);
+        transition: 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+        z-index: 100;
+
+        a {
+            padding: 1em;
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 1.4rem;
+        }
+    }
+
+    &--active {
+        transform: translateX(0);
+    }
+}
+
+// HEADER
+.header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 24em;
+    background-image: url(/img/chilli-small.jpg);
+    background-size: cover;
+    background-position: center;
+
+    &__hero {
+        position: absolute;
+        width: 100%;
+        height: 20rem;
+        padding: 20px;
+        margin: 50px;
+        background-color: rgba(0, 0, 0, 0.4);
+        box-shadow: 1px 11px 20px -10px rgba(49, 49, 49, 1);
+    }
+
+    &__hero--text {
+        position: absolute;
+        margin: 30px 0 0 0;
+        padding: 40px;
+        color: rgb(255, 255, 255);
+        z-index: 2;
+    }
+
+    h1 {
+        margin-bottom: 5px;
+        font-size: 1.9rem;
+        text-shadow: 3px 3px 5px #000;
+        color: #ddd;
+    }
+
+    span {
+        text-transform: uppercase;
+        color: #406417;
+    }
+}
+
+h2 {
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+// MAIN
+.header__about-us {
+    position: absolute;
+    width: 90%;
+    top: 18em;
+    padding: 30px;
+    background-color:
+        rgba(241, 241, 241, .9);
+    font-family: 'Comfortaa', sans-serif;
+    box-shadow: 1px 11px 20px -16px rgba(49, 49, 49, 1);
+}
+
+.header__about-us--title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 5px;
+}
+
+// PRODUCTS
+
+
+.products__title {
+    padding: 0 0 0 20px;
+    margin: 180px 0 0 0;
+    color: #629b20;
+}
+
+.product {
+    position: relative;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    height: 12rem;
+    margin: 20px;
+    padding: 60px;
+    box-shadow: 1px 11px 20px -10px rgba(49, 49, 49, 1);
+}
+
+.product__hero--text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    transition: transform 0.3s;
+    color: white;
+    transition: scale 0.5s;
+
+    :hover {
+        transform: scale(1.2);
+    }
+}
+
+.first-product {
+    background-image: url(/img/hands-gb9959732f_small.jpg);
+}
+
+.second-product {
+    background-image: url(/img/hot-peppers-small.jpg);
+}
+
+.third-product {
+    background-image: url(/img/seedling-small.jpg);
+}
+
+.fourthy-product {
+    background-image: url(/img/tom-kha-gai-g0343427ad_small.jpg);
+}
+
+// CONTACT
+.contact {
+    padding: 10px;
+    background-color: #f2f2f2;
+    text-align: center;
+
+    h3 {
+        font-size: 1em;
+        padding: 5px;
+    }
+}
+
+// FOOTER
+footer {
+    background-color: #3c3c3c;
+    padding: 30px 10px;
+    color: white;
+    text-align: center;
+}
+
+// MEDIA
+
+@media(min-width: 576px) {
+    .products-title {
+        margin: 120px 0 0 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .nav {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        &__logo {
+            font-size: 1.7rem;
+            padding: 0.4em;
+            ;
+        }
+
+        &__items-desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100vw;
+
+            a {
+                padding: 1rem;
+                color: #18452b;
+                font-size: 1.2rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                cursor: pointer;
+                transition: color 0.3s;
+
+                &:hover {
+                    color: #79bb2b;
+                }
+            }
+        }
+
+        &__burger {
+            display: none;
+        }
+
+        &__items-mobile {
+            display: none;
+        }
+    }
+
+    .header {
+        background-image: url(/img/chilli-big.jpg);
+
+        &__hero {
+            height: 24rem;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+        }
+    }
+
+    .product h3 {
+        font-size: 24px;
+    }
+
+    .product__hero--text {
+        font-size: 1.7rem;
+        padding: 20px;
+    }
+
+    .products__title {
+       
+        margin: 100px 0 0 0;
+        font-size: 2em;
+    }
+}
+
+@media (min-width: 992px) {
+    .product {
+        display: inline-block;
+        width: 45%;
+    }
+}
+
+@media (min-width: 1200px) {
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.3rem;
+    }
+
+    .nav {
+        &__logo {
+            font-size: 2.2rem;
+            ;
+        }
+
+        &__items-desktop {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
